@@ -39,6 +39,9 @@ class SmartCalculator {
         this.result = this.result+'*'+c;
       }
     }
+    else {
+      this.result = this.result+'*1';
+    }
     return this;
   }
   valueOf() {
