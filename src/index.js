@@ -25,8 +25,19 @@ class SmartCalculator {
     }
   pow(number) {
     // your implementation
-    for (let i = 1; i < number; i++) {
-      this.result = '('+this.result+')'+'*'+'('+this.result+')';
+    if (number > 1) {
+      var a = String(this.result);
+      var b = a.length;
+      var c;
+      if (isNaN(a.slice(b-2,b-1))) {
+        c = a.slice(b-1);
+      }
+      else {
+        c = a.slice(b-2);
+      }
+      for (let i = 1; i < number; i++) {
+        this.result = this.result+'*'+c;
+      }
     }
     return this;
   }
